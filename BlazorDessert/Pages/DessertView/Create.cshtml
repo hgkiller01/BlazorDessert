@@ -1,0 +1,64 @@
+﻿@page
+@model BlazorDessert.Pages.DessertView.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dessert</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dessert.DessertID" class="control-label"></label>
+                <input asp-for="Dessert.DessertID" class="form-control" />
+                <span asp-validation-for="Dessert.DessertID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dessert.DessertName" class="control-label"></label>
+                <input asp-for="Dessert.DessertName" class="form-control" />
+                <span asp-validation-for="Dessert.DessertName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dessert.DessertPrice" class="control-label"></label>
+                <input asp-for="Dessert.DessertPrice" class="form-control" />
+                <span asp-validation-for="Dessert.DessertPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dessert.DessertKind" class="control-label"></label>
+                <input asp-for="Dessert.DessertKind" class="form-control" />
+                <span asp-validation-for="Dessert.DessertKind" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dessert.DessertIntroduction" class="control-label"></label>
+                <input asp-for="Dessert.DessertIntroduction" class="form-control" />
+                <span asp-validation-for="Dessert.DessertIntroduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dessert.DessertImage" class="control-label"></label>
+                <input asp-for="Dessert.DessertImage" class="form-control" />
+                <span asp-validation-for="Dessert.DessertImage" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Dessert.IsOnSale" /> @Html.DisplayNameFor(model => model.Dessert.IsOnSale)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

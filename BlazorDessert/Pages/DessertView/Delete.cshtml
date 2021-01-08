@@ -1,0 +1,58 @@
+﻿@page
+@model BlazorDessert.Pages.DessertView.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Dessert</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dessert.DessertName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dessert.DessertName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dessert.DessertPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dessert.DessertPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dessert.DessertKind)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dessert.DessertKind)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dessert.DessertIntroduction)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dessert.DessertIntroduction)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dessert.DessertImage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dessert.DessertImage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dessert.IsOnSale)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dessert.IsOnSale)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Dessert.DessertID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

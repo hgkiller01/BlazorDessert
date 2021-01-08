@@ -1,0 +1,30 @@
+﻿@page "/Dessert"
+@if (model != null)
+{
+    <div class="row row-cols-1 row-cols-md-3">
+        @foreach (var item in model)
+        {
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="@(MyNavigationManager.BaseUri +"images/" + item.DessertImage)" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">@item.DessertName</h5>
+                        <p class="card-text">@item.DessertPrice</p>
+                        <p class="card-text">@item.DessertIntroduction</p>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            @for (int i = 1; i <= AllPage; i++)
+            {
+                var buttonNumber = i;
+                <li class="page-item"><button class="page-link" @onclick="@(e => ChangePage(buttonNumber))">@i</button></li>
+            }
+        </ul>
+    </nav>
+
+}

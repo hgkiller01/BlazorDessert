@@ -1,0 +1,66 @@
+﻿@page
+@model BlazorDessert.Pages.DessertView.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dessert[0].DessertName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dessert[0].DessertPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dessert[0].DessertKind)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dessert[0].DessertIntroduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dessert[0].DessertImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dessert[0].IsOnSale)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dessert) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DessertName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DessertPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DessertKind)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DessertIntroduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DessertImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOnSale)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DessertID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DessertID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DessertID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
