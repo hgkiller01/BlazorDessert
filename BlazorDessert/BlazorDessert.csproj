@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Database\**" />
+    <Compile Remove="Pages\TEST\**" />
+    <Content Remove="Database\**" />
+    <Content Remove="Pages\TEST\**" />
+    <EmbeddedResource Remove="Database\**" />
+    <EmbeddedResource Remove="Pages\TEST\**" />
+    <None Remove="Database\**" />
+    <None Remove="Pages\TEST\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Pages\DessertView.razor.cs" />
   </ItemGroup>
 
@@ -24,11 +35,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
     <PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Database\" />
-    <Folder Include="Pages\TEST\" />
   </ItemGroup>
 
 </Project>

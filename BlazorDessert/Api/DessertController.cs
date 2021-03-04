@@ -17,9 +17,11 @@ namespace BlazorDessert.Api
     public class DessertController : ControllerBase
     {
         private IConfiguration _config;
-        public DessertController(IConfiguration config)
+        private BlazorDessertContext db;
+        public DessertController(IConfiguration config,BlazorDessertContext _db)
         {
             _config = config;
+            db = _db;
         }
         // GET: api/<DessertController>
         [HttpGet]
@@ -39,6 +41,15 @@ namespace BlazorDessert.Api
                 string sql = @"select count(*) from dessert";
                 return conn.QueryFirstOrDefault<int>(sql);
             }
+        }
+        [HttpGet]
+        public void TestData()
+        {
+          var Desserts = db.Dessert.ToList();
+            Desserts.ForEach(x =>
+            {
+
+            });
         }
     }
 }
